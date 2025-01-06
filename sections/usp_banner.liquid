@@ -1,0 +1,35 @@
+<section>
+    <div class="container">
+      <div class="image-container">
+        {% if section.settings.usp-image != blank %} 
+           <img src="{{ section.settings.usp-image | img_url: 'master' }}"
+               alt="{{ section.settings.alt-text }}"
+               width="100%" height="auto">  
+              
+        {% else %}
+          <p>Please select an image in the theme editor.</p> 
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "USP Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "usp-image",
+        "label": "USP Image"
+      },
+      {
+        "type": "text",
+        "id": "alt-text",
+        "label": "Alternate Text for USP Image",
+        "default": "USP Image"
+      }
+    ]
+
+    
+  }
+  {% endschema %}
