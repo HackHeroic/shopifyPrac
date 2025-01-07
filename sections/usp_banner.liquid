@@ -1,17 +1,115 @@
-<section>
-    <div class="container">
-      <div class="image-container">
-        {% if section.settings.usp-image != blank %} 
-           <img src="{{ section.settings.usp-image | img_url: 'master' }}"
-               alt="{{ section.settings.alt-text }}"
-               width="100%" height="auto">  
-              
-        {% else %}
-          <p>Please select an image in the theme editor.</p> 
-        {% endif %}
-      </div>
+<section class="usp-banner">
+  <div class="container">
+      <h2 class="title">The Most Trusted Brand In Saree Industry, Since 1943</h2>
+      <div class="wrapper">
+        <div class="block">
+            <div class="iconDiv">
+              <img src="{{ "image-1.avif"| asset_url }}"
+              alt="{{ section.settings.alt-text }}" loading="lazy" height="100px" width="100px">
+            </div>
+            <p>Authentic Handlooms</p>
+        </div>
+  
+        <div class="block">
+            <div class="iconDiv">
+              <img src="{{ "image-2.avif"| asset_url   }}"
+                alt="{{ section.settings.alt-text }}" loading="lazy" height="100px" width="100px">
+            </div>
+            <p>Legacy since 1943</p>
+        </div>
+  
+        <div class="block">
+            <div class="iconDiv">
+              <img src="{{ "image-3.avif"| asset_url }}"
+                alt="{{ section.settings.alt-text }}" loading="lazy" height="100px" width="100px">
+            </div>
+            <p>Handpicked By</p>
+        </div>
+  
+        <div class="block">
+            <div class="iconDiv">
+              <img src="{{ "image-4.avif"| asset_url }}"
+                alt="{{ section.settings.alt-text }}" loading="lazy" height="100px" width="100px">
+            </div>
+            <p>Weaves from across</p>
+        </div>
     </div>
-  </section>
+  </div>
+
+</section>
+
+
+
+<style>
+  .usp-banner .container {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: center; 
+    line-height: 20px; 
+    letter-spacing: normal;
+    color: #333333; 
+    background: #fef4f2;
+    padding: 20px; 
+  }
+
+  .usp-banner h2{
+    font-family:"Noto Serif",Serif;
+    font-size:36px;
+    text-align:center;
+    line-height:39.6px;
+    letter-spacing:normal;
+    color: #790d20;
+    background:  #fef4f2;
+  }
+
+  .usp-banner .wrapper{
+    font-size:14px;
+    line-height:20px;
+    text-align:center;
+    display:flex;
+    flex-direction:row;
+    color: #333333;
+    background: #fef4f2;
+    justify-content: space-evenly;
+    flex-wrap:unset;
+    width:100%;
+    column-gap:30px;
+  }
+
+  .usp-banner .block{
+    font-family:"Open Sans", sans-serif;
+    font-size:14px;
+    text-align:start;
+    line-height:20px;
+    color: #333333;
+    background: #fef4f2;
+    width:33.3333%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .usp-banner p{
+    font-family:"Open Sans", sans-serif;
+    font-size:18px;
+    line-height:25.7143px;
+    text-align:center;
+    color: #000000;
+    background: #fef4f2;
+  }
+
+  .usp-banner .iconDiv{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+  }
+
+</style>
   
   {% schema %}
   {
@@ -19,8 +117,23 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "usp-image",
-        "label": "USP Image"
+        "id": "usp-image-1",
+        "label": "USP Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "usp-image-2",
+        "label": "USP Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "usp-image-3",
+        "label": "USP Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "usp-image-4",
+        "label": "USP Image 4"
       },
       {
         "type": "text",
